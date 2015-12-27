@@ -1,36 +1,7 @@
-#include <iostream>
-#include <string>
 #include <sstream>
+#include "Solution.h"
 
 using namespace std;
-
-/***
- *  HELPER FUNCTIONS
- *
-***/
-void displayQuestion(int index, string title, string question){
-    cout << endl;
-    cout << "Problem " << index << ": " << title << endl;
-    cout << question << endl;
-    cout << "Solution: ";  
-}
-
-void displayIncomplete(){
-    cout << "THIS QUESTION IS INCOMPLETE" << endl;
-}
-
-int sumMultiplesLT(int base, int bound){
-    int multiples = (bound-1) / base;
-    return (base * multiples * (multiples+1)) / 2;
-}
-
-bool isPalindrome(string s){
-    int range = s.size();
-    for (int i = 0; i <= (range/2)-1; i++)
-        if (s[i] != s[range-1-i])
-            return false;
-    return true;
-}
 
 /***
  *  ANSWERS
@@ -210,6 +181,8 @@ int main(){
     // displayQuestion(index++, title, question);
     // cout << 4997 << endl;
 ***/     
+    Solution sln = new Solution();
+    sln.solve(4);
 
     return 0;
 }

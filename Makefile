@@ -1,11 +1,11 @@
-# PROJECT EULER SOLUTION BATCH 1
+# PROJECT EULER SOLUTIONS
 #
 CC 		= g++
 CFLAGS 	= -c -Wall
 LDFLAGS	= 
-SRC		= main.cpp
+SRC		= main.cpp Solution.cpp
 OBJ		= $(SRC:.cpp=.o)
-EXE		= Batch1
+EXE		= PE
 
 all: $(SRC) $(EXE)
 

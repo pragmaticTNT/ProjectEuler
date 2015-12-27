@@ -1,30 +1,31 @@
 #include <string>
 #include <iostream>
 
+#ifndef __QUESTION_H_INCLUDED__
+#define __QUESTION_H_INCLUDED__
+
 class Question {
-    string title, description;
+    typedef int(*sln)();
+
+    std::string title, description;
     int index;
     bool isSolved;    
-    int (*solution)();
-    void printDescription(){
-        int count = 0
-        char * token = strtok(description, " ");
-         
-    }
+    sln solution;
 
 public:
-    Question (int i, string t, string d, bool s = false) : 
+    Question (int i, std::string t, std::string d) : 
         index(i),
         title(t),
         description(d),
-        isSolved(s) { }
+        isSolved(false) { }
 
-    bool setSolution(int(*solution)()){
-        this.solution = &solution; 
+    void setSolution(sln solution){
+        this.solution = solution; 
+        isSolved = true;
     }
 
     void display(){
-        string lineBreak = "\n\t";
+        std::string lineBreak = "\n\t";
         int count = 0;
         int maxLineChar = 60;
         std::cout << "\nQ" << index << ": " << title << lineBreak;
@@ -37,11 +38,11 @@ public:
                 count = 0;
             }
         }
-
+        if (isSolved)
+            std::cout << "Solution: " << solution() << endl;
+        else
+            std::cout << "THIS QUESTION IS INCOMPLETE.\n";
     }
+};
 
-    int solve(){
-        return solution(); 
-    } 
-
-}
+#endif
