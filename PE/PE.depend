@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1451368702 source:c:\users\lily\gitrepo\projecteuler\pe\main.cpp
+	<iostream>
+	"Solution.h"
+
+1451368644 c:\users\lily\gitrepo\projecteuler\pe\include\solution.h
+	<vector>
+	<iostream>
+	<fstream>
+	<string>
+	"Question.h"
+
+1451367974 c:\users\lily\gitrepo\projecteuler\pe\include\question.h
+	<string>
+	<iostream>
+

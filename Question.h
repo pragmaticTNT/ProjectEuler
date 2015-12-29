@@ -5,23 +5,26 @@
 #define __QUESTION_H_INCLUDED__
 
 class Question {
-    typedef int(*sln)();
-
     std::string title, description;
     int index;
     bool isSolved;    
-    sln solution;
+    int solution;
 
 public:
     Question (int i, std::string t, std::string d) : 
         index(i),
         title(t),
         description(d),
-        isSolved(false) { }
+        isSolved(false),
+        solution(0) { }
 
-    void setSolution(sln solution){
-        this.solution = solution; 
+    void setSolution(int sln){
+        solution = sln; 
         isSolved = true;
+    }
+
+    bool solved(){
+        return isSolved;
     }
 
     void display(){
@@ -39,7 +42,7 @@ public:
             }
         }
         if (isSolved)
-            std::cout << "Solution: " << solution() << endl;
+            std::cout << "Solution: " << solution << std::endl;
         else
             std::cout << "THIS QUESTION IS INCOMPLETE.\n";
     }

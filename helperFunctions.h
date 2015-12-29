@@ -1,3 +1,4 @@
+#include <string>
 
-int sumMultiplesLT(int, int);
-bool isPalindrome(string);
+int sumMultLT(int, int);
+bool isPalindrome(std::string);

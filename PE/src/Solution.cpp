@@ -1,8 +1,11 @@
 #include "Solution.h"
-#include "helperFunctions.h"
 
 Solution::Solution(){
     populate();
+}
+
+Solution::~Solution(){
+    //dtor
 }
 
 void Solution::populate(){
@@ -11,7 +14,7 @@ void Solution::populate(){
 
     std::ifstream qList(qFileName.c_str());
     while (getline(qList, line)){
-       index = std::stoi(line.c_str());
+       index = std::strtol(line);
        getline(qList, title);
        getline(qList, description);
 
@@ -27,7 +30,7 @@ void Solution::displayStatus(){
     int count = 0;
     for (int i = 0; i < questions.size()/maxCellPerLine; i++){
         // going to make sure the other stuff works first
-    } 
+    }
 }
 
 void Solution::solve(int index){
@@ -42,7 +45,7 @@ void Solution::setSolution(int index){
     int solution;
     switch(index){
         case 1:
-            solution = multiplesOf3And5(); 
+            solution = multiplesOf3And5();
             break;
         default:
             return;
@@ -50,8 +53,20 @@ void Solution::setSolution(int index){
     questions[index-1]->setSolution(solution);
 }
 
+int Solution::sumMultLT(int base, int bound){
+    int multiples = (bound-1) / base;
+    return (base * multiples * (multiples+1)) / 2;
+}
+
+bool Solution::isPalindrome(string s){
+    int range = s.size();
+    for (int i = 0; i <= (range/2)-1; i++)
+        if (s[i] != s[range-1-i])
+            return false;
+    return true;
+}
+
 int Solution::multiplesOf3And5(){
     int bound = 1000;
     return sumMultLT(3,bound) + sumMultLT(5,bound) - sumMultLT(15,bound);
 }
-

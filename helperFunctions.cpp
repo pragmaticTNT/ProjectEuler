@@ -1,6 +1,6 @@
 #include "helperFunctions.h"
 
-int sumMultiplesLT(int base, int bound){
+int sumMultLT(int base, int bound){
     int multiples = (bound-1) / base;
     return (base * multiples * (multiples+1)) / 2;
 }

@@ -3,7 +3,7 @@
 CC 		= g++
 CFLAGS 	= -c -Wall
 LDFLAGS	= 
-SRC		= main.cpp Solution.cpp
+SRC		= main.cpp Solution.cpp helperFunctions.cpp
 OBJ		= $(SRC:.cpp=.o)
 EXE		= PE
 

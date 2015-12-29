@@ -6,7 +6,6 @@ using namespace std;
 /***
  *  ANSWERS
  *
-***/
 int multiplesOf3And5(int bound){
     int sumMult3    = sumMultiplesLT(3, bound);   
     int sumMult5    = sumMultiplesLT(5, bound);
@@ -54,6 +53,7 @@ int sumSquareDifference(int bound){
     int sum     = bound * (bound+1) / 2;
     return (sum*sum) - sumSqr;
 }
+***/
     
 int main(){
 
@@ -181,7 +181,7 @@ int main(){
     // displayQuestion(index++, title, question);
     // cout << 4997 << endl;
 ***/     
-    Solution sln = new Solution();
+    Solution sln = Solution();
     sln.solve(4);
 
     return 0;
