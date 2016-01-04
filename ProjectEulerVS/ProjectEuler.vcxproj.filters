@@ -19,6 +19,12 @@
     <None Include="questionList.txt">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="data_largestProductInGrid.txt">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data_largestProductInSeries.txt">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
